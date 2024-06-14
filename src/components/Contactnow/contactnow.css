@@ -1,0 +1,54 @@
+.contactnow-section {
+  color: black;
+  background-color: white;
+  font-size: 24px;
+  /* min-height: 200vh; */
+}
+
+.contactrow-section {
+  height: 100%;
+}
+.first-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #bbbcbc;
+
+  /* This ensures the column takes full height of the row */
+}
+
+.contact-text {
+  /* Optional: Add styles for centering text */
+  text-align: center;
+}
+.contact-text p {
+  margin-bottom: 0;
+}
+
+.form-group {
+  /* margin-bottom: 20px; */
+  /* Add margin between form groups */
+}
+.form-first-name {
+  /* margin-bottom: 20px; */
+}
+.form-last-name {
+  /* margin-bottom: 20px; */
+}
+.second-section {
+  margin-top: 20px;
+  align-items: start;
+}
+
+.form-email {
+  /* margin-bottom: 20px; */
+}
+.form-message {
+  /* margin-bottom: 20px; */
+}
+
+.button-container {
+  align-items: center;
+}

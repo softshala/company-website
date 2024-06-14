@@ -1,0 +1,40 @@
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-row-card {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  background-color: #f5f5f5;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.work-text {
+  font-weight: bold;
+  color: black;
+  font-size: 40;
+}
+
+.project-name {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.project-details {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+.project-container {
+  padding-top: 120px;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #999;
+}

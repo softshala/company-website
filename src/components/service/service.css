@@ -1,0 +1,23 @@
+.services {
+  text-align: center;
+  padding: 40px;
+  background-color: white;
+}
+
+.services h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.services p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #707f7f;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}

@@ -1,0 +1,136 @@
+.about-page {
+  font-family: Arial, sans-serif;
+}
+
+.about-header-section {
+  background: url("../../Assets/Projects/trust_partner.jpg") no-repeat center
+    center;
+  background-size: cover;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  margin-top: 100px4;
+  justify-content: center;
+}
+
+.about-header-content {
+  max-width: 600px;
+  /* Add transparency to background */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+/* .about-header-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-header-section p {
+  font-size: 1.25rem;
+}
+
+.about-main-section {
+  padding: 50px 0;
+}
+
+.about-team-image {
+  max-width: 100%;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.about-story-section {
+  margin-top: 50px;
+}
+
+.about-story-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-story-section p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.about-form-container {
+  background-color: red;
+}
+
+.about-form-container h1 {
+  font-size: 45px;
+  text-align: center;
+  font-weight: 600;
+} */
+
+/* src/AboutUs.css */
+/* General styles */
+.about-main-section {
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+.about-us h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.about-us section {
+  margin-bottom: 2rem;
+}
+
+.about-us section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #343a40;
+}
+
+/* Card styles */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: #007bff;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+/* Icon styles */
+.card .fa {
+  color: #007bff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .about-us h1 {
+    font-size: 2rem;
+  }
+
+  .about-us section h2 {
+    font-size: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-text {
+    font-size: 0.875rem;
+  }
+}

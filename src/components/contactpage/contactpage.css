@@ -1,0 +1,57 @@
+.contact-page {
+  text-align: center;
+
+  background-color: white;
+}
+.contact-page-row {
+  background-color: royalblue;
+  background: url("../../Assets/Projects/contact_background.png") no-repeat
+    center center;
+  background-size: cover; /* Ensures the image covers the entire width and height */
+  display: flex;
+  height: 250px;
+  align-items: center;
+  justify-content: center;
+  background-color: rebeccapurple;
+  margin-top: 100px;
+}
+.contact-page-header {
+  /* align-items: center; */
+}
+
+.contact-header h2 {
+  font-size: 2.5em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.contact-header p {
+  font-size: 1.2em;
+  color: #777;
+  text-align: left;
+}
+
+.contact-details {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.contact-form-container {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.contact-form-container h3 {
+  margin-bottom: 20px;
+}
+.error-message {
+  color: red;
+  font-size: 13px;
+}
+
+.text-input-field {
+}
+.label-text {
+}

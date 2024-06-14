@@ -1,0 +1,150 @@
+.bottom-section-container {
+  background-color: white;
+}
+
+.bottom-section-row {
+  flex: 1; /* This makes sure the row takes up available space */
+  display: flex;
+  background-color: white;
+  flex-direction: row;
+  height: 600px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.bottom-section-col-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Changed from 'start' to 'flex-start' */
+  justify-content: center;
+}
+.text-icon-row {
+  padding-right: 30px;
+  padding-top: 20px;
+  align-items: flex-start; /* Changed from 'start' to 'flex-start' */
+  justify-content: flex-start;
+}
+
+.text-icon-row p {
+  text-align: left;
+}
+
+.icon-row {
+  display: flex; /* Added to ensure flexbox context */
+  flex-direction: row;
+  justify-content: flex-start;
+
+  /* Changed from 'left' to 'flex-start' */
+}
+
+.social-icon {
+  font-size: 25px;
+  color: #3367f5;
+}
+
+.company-logo-image-row {
+  height: 70px;
+  width: 100px;
+  display: flex;
+}
+
+.botton-section-image {
+  height: 10px;
+  justify-content: center;
+  /* width: 10px;
+   */
+  width: auto;
+}
+
+.bottom-section-row-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Changed from 'start' to 'flex-start' */
+  justify-content: left;
+}
+.bottom-section-row-1-h1 {
+  font-size: 22;
+  color: #161a3a;
+  text-align: left;
+}
+
+.bottom-section-col-3 {
+  display: flex;
+
+  margin-bottom: 50px;
+}
+
+.bottom-section-col-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.bottom-section-row-2 h1 {
+  /* color: black; */
+
+  font-size: 16px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.col1-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Changed from 'start' to 'flex-start' */
+  justify-content: left;
+}
+
+.col1-div h1 {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 10px 0;
+  color: #221f2c;
+  /* Adjust margin as needed */
+}
+
+.bottom-section-col-2 h1 {
+  font-size: 16px;
+  color: #161a3a;
+  font-weight: 600;
+}
+
+.bottom-section-row-3 {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-start; /* Changed from 'start' to 'flex-start' */
+  justify-content: center;
+}
+
+.bottom-section-row-3 h1 {
+  text-align: left;
+  font-size: 16px;
+}
+
+.col-3-text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.bottom-section-col-4 {
+  display: flex;
+  flex: 0pc;
+  margin-bottom: 40px;
+  flex-direction: column;
+
+  align-items: flex-start; /* Changed from 'start' to 'flex-start' */
+  justify-content: center;
+}
+.bottom-section-row-4 h1 {
+  text-align: left;
+  font-size: 16px;
+}
+
+.bottom-section-row-4 p {
+  text-align: left;
+}

@@ -1,0 +1,30 @@
+.service-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  background-color: #1689dc;
+}
+
+.service-card.highlighted {
+  background-color: #007fff;
+  color: white;
+}
+
+.service-card h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.service-card p {
+  font-family: "Poppins", sans-serif;
+}
+
+.service-icon {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
