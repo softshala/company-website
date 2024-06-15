@@ -30,7 +30,7 @@ const ContactTab = () => {
           <p>
             Main Office
             <br />
-            Rajasthan, India, 302019
+            132, Shree Ram Vihar, Jagatpura , Jaipur, Rajasthan
           </p>
         </div>
       </div>

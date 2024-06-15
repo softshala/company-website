@@ -3,6 +3,16 @@ import "./contactnow.css";
 import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
 import emailjs from "@emailjs/browser";
 
+// Email.send({
+//   Host: "smtp.elasticemail.com",
+//   Username: "username",
+//   Password: "password",
+//   To: "them@website.com",
+//   From: "you@isp.com",
+//   Subject: "This is the subject",
+//   Body: "And this is the body",
+// }).then((message) => alert(message));
+
 function ContactNow() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -24,6 +34,11 @@ function ContactNow() {
   const publicKey = "Xoav8Np5VdCfwicUW";
 
   const templateId = "template_qfqlk3p";
+
+  // const seriveId = "service_dv2kwjl";
+  // const publicKey = "rSuRXwu8i3AexgZQs";
+
+  // const templateId = "template_5emunp9";
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -71,16 +86,34 @@ function ContactNow() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (validate()) {
-      const fullName = formData.firstName + formData.lastName;
+      const fullName = `${formData.firstName} ${formData.lastName}`;
+      const bodyMessage = `Full Name: ${formData.firstName}${formData.lastName}<br> Email: ${formData.email}<br> Phone Number: ${formData.phoneNumber}<br> Message: ${formData.message}`;
 
       const templateParams = {
         from_name: fullName,
         from_email: formData.email,
+
         to_name: "SoftShala",
         message: formData.message,
+        name: fullName,
+        email: formData.email,
+        phone: formData.phoneNumber,
       };
+
+      // window.Email.send({
+      //   Host: "smtp.elasticemail.co m",
+      //   Username: "flaman241@gmail.com",
+      //   Password: "E9A4320E7DFB59C581A7FBF91D3C5C0EB235",
+      //   To: "flaman241@gmail.com",
+      //   From: for,
+      //   // Subject: "This is the subject",
+
+      //   Body: bodyMessage,
+      // })
+      //   .then((message) => alert("Mail sent successfully!"))
+      //   .catch((error) => console.error("Failed to send email:", error));
+
       emailjs.send(seriveId, templateId, templateParams).then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import "./contactForm.css";
+// import { Resend } from "resend";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -59,7 +60,7 @@ const ContactForm = () => {
     return Object.keys(formErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (validate()) {
@@ -68,7 +69,10 @@ const ContactForm = () => {
         from_email: formData.email,
         to_name: "SoftShala",
         message: formData.message,
+        name: formData.name,
+        email: formData.email,
       };
+
       emailjs.send(seriveId, templateId, templateParams).then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
@@ -77,6 +81,41 @@ const ContactForm = () => {
           console.log("FAILED...", err);
         }
       );
+
+      // try {
+      //   // const resend = new Resend("re_eDJRtS1p_2sVsatHaNyomvNNwux66bnSX");
+
+      //   // const templateParams = {
+      //   //   from_name: fullName,
+      //   //   from_email: formData.email,
+      //   //   to_name: "SoftShala",
+      //   //   message: formData.message,
+      //   //   name: fullName,
+      //   //   email: formData.email,
+      //   //   phone: formData.phoneNumber,
+      //   // };
+
+      //   // var response = await resend.emails.send({
+      //   //   from: "amansh8996622@gmail.com",
+      //   //   to: "flaman241@gmail.com",
+      //   //   subject: "Hello World",
+      //   //   // html: "<p>Congrats on sending your <strong>first email</strong>!</p>",
+      //   //   react :
+      //   // });
+
+      //   // emailjs.send(seriveId, templateId, templateParams).then(
+      //   //   (response) => {
+      //   //     console.log("SUCCESS!", response.status, response.text);
+      //   //   },
+      //   //   (err) => {
+      //   //     console.log("FAILED...", err);
+      //   //   }
+      //   // );
+
+      // } catch (error) {
+      //   console.log(error, "error of sending the mail");
+      // }
+
       setSubmitted(true);
     } else {
       setSubmitted(false);

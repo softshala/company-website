@@ -17,7 +17,7 @@ const ContactInfo = () => {
       <div className="contact-info-item">
         <i className="fas fa-map-marker-alt"></i>
         <p>Main Office</p>
-        <p>Rajasthan, India, 302019</p>
+        <p>132, Shree Ram Vihar, Jagatpura, Jaipur Rajasthan</p>
       </div>
     </div>
   );
