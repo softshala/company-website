@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -16,9 +16,31 @@ import {
 
 import { CgFileDocument } from "react-icons/cg";
 
-function NavBar() {
+import "./navbar.css";
+
+function NavBar({ setParentNavbarHeight }) {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+
+  const [navbarHeight, setNavbarHeight] = useState(0);
+
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (navbarRef.current) {
+        setNavbarHeight(navbarRef.current.clientHeight);
+        setParentNavbarHeight(navbarRef.current.clientHeight);
+      }
+    };
+
+    // Call handleResize initially and on window resize
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, [setNavbarHeight]);
 
   function scrollHandler() {
     // if (window.scrollY >= 20) {
@@ -28,15 +50,34 @@ function NavBar() {
     // }
   }
 
-  // window.addEventListener("scroll", scrollHandler);
+  window.addEventListener("scroll", scrollHandler);
 
   return (
-    <Navbar expanded={expand} fixed="top" expand="lg" className={"navbar"}>
+    <Navbar
+      bg="light"
+      ref={navbarRef}
+      expanded={expand}
+      fixed="top"
+      expand="lg"
+      sticky="top"
+      className={"navbar"}
+    >
       <Container fluid>
         <Navbar.Brand href="/" className="d-flex">
           <img src={logo} className="Company-logo" alt="brand" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+        <Navbar.Toggle
+          className="nav-bar-mobile-icon"
+          aria-controls="responsive-navbar-nav"
+          onClick={() => {
+            updateExpanded(expand ? false : "expanded");
+          }}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
@@ -53,7 +94,6 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 className={"nav-link"}
-                // className={navColour ? "nav-link" : "nav-link-scrolled"}
                 as={Link}
                 to="/about"
                 onClick={() => updateExpanded(false)}
@@ -61,17 +101,6 @@ function NavBar() {
                 About
               </Nav.Link>
             </Nav.Item>
-
-            {/* <Nav.Item>
-              <Nav.Link
-                className={navColour ? "nav-link" : "nav-link-scrolled"}
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
-              >
-                Career
-              </Nav.Link>
-            </Nav.Item> */}
 
             <Nav.Item classname={"nav-project"}>
               <Nav.Link

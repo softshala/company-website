@@ -6,7 +6,6 @@ import Home from "./components/Home/Home";
 import AboutPage from "./components/About/About";
 import Projects from "./components/Projects/ProjectsGrid";
 import Footer from "./components/Footer";
-import Resume from "./components/Resume/ResumeNew";
 import ContactTab from "./components/ContactTab/contactTab";
 
 import ProjectGrid from "./components/Projects/ProjectsGrid";
@@ -26,7 +25,7 @@ import { Container } from "react-bootstrap";
 
 function App() {
   const [load, upadateLoad] = useState(true);
-
+  const [navbarHeight, setParentNavbarHeight] = useState(0);
   useEffect(() => {
     const timer = setTimeout(() => {
       upadateLoad(false);
@@ -39,17 +38,34 @@ function App() {
     <Router>
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
+        <Navbar setParentNavbarHeight={setParentNavbarHeight} />
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/project" element={<ProjectGrid />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactTab />} />
-          <Route path="/resume" element={<ContactPage />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-        <Footer />
+        {/* {console.log(navbarHeight, "nav bar height in app ")} */}
+        <div
+          style={{
+            marginTop: navbarHeight,
+            backgroundColor: "pink",
+          }}
+        >
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/project" element={<ProjectGrid />} />
+            <Route path="/about" element={<AboutPage />} />
+            {/* <Route path="/contact" element={<ContactTab />} /> */}
+            <Route path="/resume" element={<ContactPage />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+          {/* <div
+            style={{
+              height: "100px",
+              backgroundColor: "pink",
+            }}
+          ></div> */}
+        </div>
+
+        <footer>
+          <Footer></Footer>
+        </footer>
       </div>
     </Router>
   );

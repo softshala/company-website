@@ -32,9 +32,9 @@
 }
 .project-container {
   padding-top: 120px;
+  background-color: white;
 }
 
 .project-description {
   font-size: 1rem;
-  color: #999;
 }

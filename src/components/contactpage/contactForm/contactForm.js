@@ -1,33 +1,27 @@
 import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import "./contactForm.css";
-// import { Resend } from "resend";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
 
   const seriveId = "service_5xnchn7";
   const publicKey = "Xoav8Np5VdCfwicUW";
-
   const templateId = "template_qfqlk3p";
-  // const seriveId = "service_dv2kwjl";
-  // const publicKey = "rSuRXwu8i3AexgZQs";
-
-  // const templateId = "template_5emunp9";
 
   const [errors, setErrors] = useState({});
-
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     emailjs.init({
       publicKey: publicKey,
     });
-  });
+  }, [publicKey]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,8 +33,8 @@ const ContactForm = () => {
 
   const validate = () => {
     let formErrors = {};
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^[0-9]{10}$/;
 
     if (!formData.name.trim()) {
       formErrors.name = "Name is required";
@@ -52,6 +46,12 @@ const ContactForm = () => {
       formErrors.email = "Email is not valid";
     }
 
+    if (!formData.phone.trim()) {
+      formErrors.phone = "Phone number is required";
+    } else if (!phoneRegex.test(formData.phone)) {
+      formErrors.phone = "Phone number is not valid. It should be 10 digits.";
+    }
+
     if (!formData.message.trim()) {
       formErrors.message = "Message is required";
     }
@@ -60,7 +60,7 @@ const ContactForm = () => {
     return Object.keys(formErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (validate()) {
@@ -71,6 +71,7 @@ const ContactForm = () => {
         message: formData.message,
         name: formData.name,
         email: formData.email,
+        phone: formData.phone,
       };
 
       emailjs.send(seriveId, templateId, templateParams).then(
@@ -81,40 +82,6 @@ const ContactForm = () => {
           console.log("FAILED...", err);
         }
       );
-
-      // try {
-      //   // const resend = new Resend("re_eDJRtS1p_2sVsatHaNyomvNNwux66bnSX");
-
-      //   // const templateParams = {
-      //   //   from_name: fullName,
-      //   //   from_email: formData.email,
-      //   //   to_name: "SoftShala",
-      //   //   message: formData.message,
-      //   //   name: fullName,
-      //   //   email: formData.email,
-      //   //   phone: formData.phoneNumber,
-      //   // };
-
-      //   // var response = await resend.emails.send({
-      //   //   from: "amansh8996622@gmail.com",
-      //   //   to: "flaman241@gmail.com",
-      //   //   subject: "Hello World",
-      //   //   // html: "<p>Congrats on sending your <strong>first email</strong>!</p>",
-      //   //   react :
-      //   // });
-
-      //   // emailjs.send(seriveId, templateId, templateParams).then(
-      //   //   (response) => {
-      //   //     console.log("SUCCESS!", response.status, response.text);
-      //   //   },
-      //   //   (err) => {
-      //   //     console.log("FAILED...", err);
-      //   //   }
-      //   // );
-
-      // } catch (error) {
-      //   console.log(error, "error of sending the mail");
-      // }
 
       setSubmitted(true);
     } else {
@@ -149,6 +116,18 @@ const ContactForm = () => {
         {errors.email && <span className="error-message">{errors.email}</span>}
       </label>
       <label className="label-text">
+        Phone:
+        <input
+          className="text-input-field"
+          type="tel"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          required
+        />
+        {errors.phone && <span className="error-message">{errors.phone}</span>}
+      </label>
+      <label className="label-text">
         Message:
         <textarea
           className="text-input-field"
@@ -161,9 +140,7 @@ const ContactForm = () => {
           <span className="error-message">{errors.message}</span>
         )}
       </label>
-      <button type="submit" onClick={handleSubmit}>
-        Send Your Enquiry
-      </button>
+      <button type="submit">Send Your Enquiry</button>
     </form>
   );
 };

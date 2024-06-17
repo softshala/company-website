@@ -52,3 +52,9 @@
 .button-container {
   align-items: center;
 }
+
+@media (max-width: 400px) {
+  .form-last-name {
+    margin-top: 30px;
+  }
+}

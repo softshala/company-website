@@ -9,7 +9,7 @@ function BottomSection() {
   return (
     <Container fluid className="bottom-section-container">
       <Row className="bottom-section-row">
-        <Col className="bottom-section-col-1">
+        <Col className="bottom-section-col-1" xs={12} lg={3}>
           <Row className="company-logo-image-row">
             <img src={companyLogo} className="company-logo-image" alt="brand" />
           </Row>
@@ -59,9 +59,9 @@ function BottomSection() {
           </Row>
         </Col>
 
-        <Col className="bottom-section-col-2">
+        <Col className="bottom-section-col-2" xs={12} lg={3}>
           <Row className="bottom-section-row-2">
-            <h1>Services</h1>
+            <h1 className="service-h1">Services</h1>
             <div className="col1-div">
               <h1>Salesforce Consulting</h1>
               <h1>Salesforce Development</h1>
@@ -74,7 +74,7 @@ function BottomSection() {
           </Row>
         </Col>
 
-        <Col className="bottom-section-col-3">
+        <Col className="bottom-section-col-3" xs={12} lg={3}>
           <Row className="bottom-section-row-3">
             <h1>Quick Links</h1>
             <div className="col1-div">
@@ -96,7 +96,7 @@ function BottomSection() {
             </div>
           </Row>
         </Col>
-        <Col className="bottom-section-col-4">
+        <Col className="bottom-section-col-4" xs={12} lg={3}>
           <Row className="bottom-section-row-4">
             <h1>Get in Touch</h1>
             <p>132, Shree Ram Vihar, Jagatpura, Jaipur,</p>
@@ -114,13 +114,6 @@ function BottomSection() {
       </Row>
     </Container>
   );
-
-  <div className="social-icons mt-3">
-    <FaFacebook className="social-icon" />
-    <FaLinkedin className="social-icon" />
-    <FaInstagram className="social-icon" />
-    <FaTwitter className="social-icon" />
-  </div>;
 }
 
 export default BottomSection;

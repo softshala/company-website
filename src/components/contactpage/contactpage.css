@@ -1,35 +1,83 @@
-.contact-page {
-  text-align: center;
-
-  background-color: white;
+.contact-page-section {
 }
+.contact-page-maincontainer {
+  background-color: white;
+  .contact-info {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .contact-info-item {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-info-item i {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+
+  .contact-info-item p {
+    margin: 5px 0;
+    color: #333;
+  }
+
+  @media (max-width: 767px) {
+    .contact-info-item {
+      padding: 15px;
+    }
+
+    .contact-info-item i {
+      font-size: 1.5em;
+    }
+
+    .contact-info-item p {
+      font-size: 1em;
+    }
+  }
+}
+
 .contact-page-row {
-  background-color: royalblue;
-  background: url("../../Assets/Projects/contact_background.png") no-repeat
-    center center;
-  background-size: cover; /* Ensures the image covers the entire width and height */
+  background: url("../../Assets/Projects/contact_background.png") center;
+  background-size: cover;
+
+  /* Ensures the image covers the entire width and height */
   display: flex;
-  height: 250px;
+  height: 40vh;
+
+  margin-top: 80px;
   align-items: center;
   justify-content: center;
-  background-color: rebeccapurple;
-  margin-top: 100px;
 }
 .contact-page-header {
+  color: white;
+  align-items: center;
+
+  text-align: center;
   /* align-items: center; */
 }
 
-.contact-header h2 {
-  font-size: 2.5em;
+.contact-page-header h2 {
+  /* font-size: 2.5em; */
+  font-size: 2em;
   margin-top: 30px;
   margin-bottom: 10px;
-  text-align: left;
+  text-align: center;
+  color: white;
+  font-weight: bold;
 }
 
-.contact-header p {
-  font-size: 1.2em;
-  color: #777;
-  text-align: left;
+.contact-page-header p {
+  /* font-size: 1.2em; */
+  font-size: 1em;
+  /* color: #777; */
+  color: white;
+  font-weight: 600;
+  text-align: center;
 }
 
 .contact-details {
@@ -39,7 +87,7 @@
 }
 
 .contact-form-container {
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 

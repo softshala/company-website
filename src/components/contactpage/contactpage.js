@@ -6,15 +6,13 @@ import ContactInfo from "./contactinformation/contactinformation";
 import ContactForm from "./contactForm/contactForm";
 import "./contactpage.css";
 
-
-
 const ContactPage = () => {
   return (
-    <Container fluid className="contact-page">
+    <Container fluid className="contact-page-maincontainer">
       <Row className="contact-page-row">
         <div className="contact-page-header">
           <h2>Need Help?</h2>
-          <p>Contact VediSphere for sales and support</p>
+          <p>Contact SoftShala Technologies for sales and support</p>
         </div>
       </Row>
       <Row>
