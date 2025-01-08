@@ -14,7 +14,7 @@ const ContactTab = () => {
           <p>
             Call Us 24x7
             <br />
-            +91 85010 34813
+            +91 7878534005
           </p>
         </div>
         <div className="contact-item">
