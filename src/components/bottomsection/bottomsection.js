@@ -106,7 +106,7 @@ function BottomSection() {
               <a href="mailto:sales@softshala.com">sales@softshala.com</a>
             </p>
             <p>
-              Phone: <a href="tel:+91 9079671033">+91 90796 71033</a>
+              Phone: <a href="tel:+91 7878534005">+91 7878534005</a>
             </p>
             <p>Hours: Mon-Fri 9:00AM - 7:30PM</p>
           </Row>
